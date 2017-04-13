@@ -1,11 +1,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from punchline.apps.core.models import Author
+from punchline.apps.core.models import Author, Reference
 
 
-class Artist(models.Model):
-    author = models.OneToOneField(Author, on_delete=models.CASCADE)
+class Artist(Author):
     nickname = models.CharField(max_length=1024)
 
     def __str__(self):
@@ -20,7 +19,7 @@ class Album(models.Model):
         return self.name
 
 
-class Song(models.Model):
+class Song(Reference):
     """
     A song could have further authors (including feat for example)
     """
