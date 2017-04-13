@@ -20,7 +20,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'punchline.apps.punchline',
+    'punchline.apps.core',
+    'punchline.apps.music',
 ]
 
 MIDDLEWARE = [
@@ -100,7 +101,7 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 FORMAT_MODULE_PATH = [
-    'punchlines.formats',
+    'punchline.formats',
 ]
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
