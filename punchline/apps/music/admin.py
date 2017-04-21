@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from polymorphic.admin import PolymorphicChildModelAdmin
+
 from .models import Album, Artist, Song
 
 
@@ -9,12 +11,15 @@ class AlbumAdmin(admin.ModelAdmin):
 
 
 @admin.register(Artist)
-class ArtistAdmin(admin.ModelAdmin):
+class ArtistAdmin(PolymorphicChildModelAdmin):
+    base_model = Artist
+
     list_display = ('id',)
-    list_select_related = ('author',)
 
 
 @admin.register(Song)
-class SongAdmin(admin.ModelAdmin):
+class SongAdmin(PolymorphicChildModelAdmin):
+    base_model = Song
+
     list_display = ('id', 'title', 'album')
     list_select_related = ('album',)
