@@ -1,0 +1,7 @@
+psycopg2==2.7.1
+Pillow==4.1.0
+
+Django==1.11
+djangorestframework==3.6.2
+
+django-autocomplete-light==3.2.4

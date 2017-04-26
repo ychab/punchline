@@ -1,0 +1,24 @@
+sudo: false
+language: python
+python:
+    - "3.6"
+addons:
+    postgresql: "9.4"
+env:
+    - TOXENV=pylama
+    - TOXENV=isort
+    - TOXENV=docs
+    - TOXENV=py36-coverage
+    - TOXENV=py36-reverse
+install:
+    - pip install coveralls tox
+before_script:
+    - createuser -U postgres -d punchline
+    - createdb -U postgres -O punchline punchline
+    - cp punchline/settings/local.py.dist punchline/settings/local.py
+    - sed -i 's/<DB_NAME>/punchline/g' punchline/settings/local.py
+    - sed -i 's/<DB_USER>/punchline/g' punchline/settings/local.py
+script:
+    - tox
+after_success:
+    - coveralls

@@ -1,0 +1,317 @@
+[
+{
+    "model": "music.artist",
+    "pk": 1,
+    "fields": {
+        "first_name": null,
+        "last_name": null,
+        "birth_date": null,
+        "description": "",
+        "image": "",
+        "nickname": "Seth Gueko"
+    }
+},
+{
+    "model": "music.artist",
+    "pk": 2,
+    "fields": {
+        "first_name": null,
+        "last_name": null,
+        "birth_date": null,
+        "description": "",
+        "image": "",
+        "nickname": "Orelsan"
+    }
+},
+{
+    "model": "music.artist",
+    "pk": 3,
+    "fields": {
+        "first_name": null,
+        "last_name": null,
+        "birth_date": null,
+        "description": "",
+        "image": "",
+        "nickname": "Gringe"
+    }
+},
+{
+    "model": "music.artist",
+    "pk": 5,
+    "fields": {
+        "first_name": null,
+        "last_name": null,
+        "birth_date": null,
+        "description": "",
+        "image": "",
+        "nickname": "Damso"
+    }
+},
+{
+    "model": "music.album",
+    "pk": 1,
+    "fields": {
+        "name": "Barlou",
+        "date": "2016-11-18",
+        "image": ""
+    }
+},
+{
+    "model": "music.album",
+    "pk": 2,
+    "fields": {
+        "name": "Perdu D'avance",
+        "date": "2009-02-16",
+        "image": ""
+    }
+},
+{
+    "model": "music.album",
+    "pk": 3,
+    "fields": {
+        "name": "Orelsan et Gringe sont les Casseurs Flowters",
+        "date": null,
+        "image": ""
+    }
+},
+{
+    "model": "music.album",
+    "pk": 4,
+    "fields": {
+        "name": "Batterie faible",
+        "date": null,
+        "image": ""
+    }
+},
+{
+    "model": "music.song",
+    "pk": 1,
+    "fields": {
+        "title": "Comme des sauvages",
+        "album": 1,
+        "date": null
+    }
+},
+{
+    "model": "music.song",
+    "pk": 2,
+    "fields": {
+        "title": "Jimmy Punchline",
+        "album": 2,
+        "date": null
+    }
+},
+{
+    "model": "music.song",
+    "pk": 3,
+    "fields": {
+        "title": "Barlou",
+        "album": 1,
+        "date": null
+    }
+},
+{
+    "model": "music.song",
+    "pk": 4,
+    "fields": {
+        "title": "C'est pas pareil",
+        "album": 1,
+        "date": null
+    }
+},
+{
+    "model": "music.song",
+    "pk": 5,
+    "fields": {
+        "title": "Stupide Stupide Stupide",
+        "album": 3,
+        "date": null
+    }
+},
+{
+    "model": "music.song",
+    "pk": 6,
+    "fields": {
+        "title": "Exutoire",
+        "album": 4,
+        "date": null
+    }
+},
+{
+    "model": "music.song",
+    "pk": 7,
+    "fields": {
+        "title": "Vinyl & K7",
+        "album": 1,
+        "date": null
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 1,
+    "fields": {
+        "text": "Elle est belle\r\nMais que la nuit comme la tour Eiffel",
+        "language": "fr_FR",
+        "created": "2017-04-25T09:38:13.920Z",
+        "modified": "2017-04-25T11:50:35.311Z",
+        "artist": 1,
+        "song": 1
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 2,
+    "fields": {
+        "text": "Ma gueule de bois ferait passer Pinocchio pour un vrai ptit gar\u00e7on",
+        "language": "fr_FR",
+        "created": "2017-04-25T11:54:46.477Z",
+        "modified": "2017-04-25T11:54:46.477Z",
+        "artist": 2,
+        "song": 2
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 3,
+    "fields": {
+        "text": "Halt\u00e9rophile sexuel, je soul\u00e8ve des meufs qui font 2 fois mon poids",
+        "language": "fr_FR",
+        "created": "2017-04-25T13:54:14.798Z",
+        "modified": "2017-04-25T13:54:14.798Z",
+        "artist": 2,
+        "song": 2
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 4,
+    "fields": {
+        "text": "Continue \u00e0 rapper des mitos, tu le fais si bien\r\nTu parles de douilles et de plombs mais t'es \u00e9lectricien",
+        "language": "fr_FR",
+        "created": "2017-04-25T13:55:19.158Z",
+        "modified": "2017-04-25T13:55:19.158Z",
+        "artist": 2,
+        "song": 2
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 5,
+    "fields": {
+        "text": "si t'es au pied du mur, rel\u00e8ve la t\u00eate et suce le ma\u00e7on",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:19:20.518Z",
+        "modified": "2017-04-25T14:19:20.518Z",
+        "artist": 1,
+        "song": 3
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 6,
+    "fields": {
+        "text": "T'as combattu comme une reine\r\nPourquoi veux-tu festoyer comme un roi ?",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:23:03.717Z",
+        "modified": "2017-04-25T14:23:03.717Z",
+        "artist": 1,
+        "song": 3
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 7,
+    "fields": {
+        "text": "J'ai de l'amour propre\r\nMais j'aime l'amour sale",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:25:52.289Z",
+        "modified": "2017-04-25T14:25:52.289Z",
+        "artist": 1,
+        "song": 1
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 8,
+    "fields": {
+        "text": "Fais pas le lion fasse \u00e0 ta m\u00e8re\r\nSi tu fais le chaton face \u00e0 ta pute",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:34:53.684Z",
+        "modified": "2017-04-25T14:34:53.684Z",
+        "artist": 1,
+        "song": 4
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 9,
+    "fields": {
+        "text": "J'ai tout le temps envie de baiser\r\nFaut que j'aille voir une psychot\u00e9rapute",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:36:37.131Z",
+        "modified": "2017-04-25T14:36:37.132Z",
+        "artist": 1,
+        "song": 4
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 10,
+    "fields": {
+        "text": "Je rappe mieux qu'eux, mais ils veulent pas se l'admettre\r\nJe vais me tatouer \u00e9l\u00e8ve sur la queue car l'\u00e9l\u00e8ve d\u00e9passe le maitre/m\u00e8tre",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:39:23.276Z",
+        "modified": "2017-04-25T14:39:23.276Z",
+        "artist": 1,
+        "song": 4
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 11,
+    "fields": {
+        "text": "Des sir\u00e8nes aux thons, je baisse toutes sortes d'esp\u00e8ces marines\r\nQueue m\u00e9canique, Winter le dauphin, sex machine",
+        "language": "fr_FR",
+        "created": "2017-04-25T14:48:43.751Z",
+        "modified": "2017-04-25T14:48:43.751Z",
+        "artist": 3,
+        "song": 5
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 12,
+    "fields": {
+        "text": "Je respecte plus les r\u00e8gles\r\nM\u00eame celle de ces menstruations",
+        "language": "fr_FR",
+        "created": "2017-04-25T15:05:56.382Z",
+        "modified": "2017-04-25T15:05:56.382Z",
+        "artist": 5,
+        "song": 6
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 13,
+    "fields": {
+        "text": "J'me couche tellement tard et j'me l\u00e8ve tellement t\u00f4t\r\nQue j'arrive \u00e0 me croiser dans l'escalier",
+        "language": "fr_FR",
+        "created": "2017-04-25T15:10:36.385Z",
+        "modified": "2017-04-25T15:10:36.385Z",
+        "artist": 1,
+        "song": 7
+    }
+},
+{
+    "model": "music.punchline",
+    "pk": 14,
+    "fields": {
+        "text": "Avec tout ce que tu te coffres dans le boule\r\nC'est le parloir qui se fout de la coloscopie",
+        "language": "fr_FR",
+        "created": "2017-04-25T15:11:51.313Z",
+        "modified": "2017-04-25T15:11:51.313Z",
+        "artist": 1,
+        "song": 7
+    }
+}
+]
