@@ -12,7 +12,7 @@ class ArtistAutocompleteView(autocomplete.Select2QuerySetView):
         qs = Artist.objects.all()
         if self.q:
             qs = qs.filter(nickname__istartswith=self.q)
-        qs = qs.order_by('nickname')
+        qs = qs.order_by('nickname', '-pk')
         return qs
 
 
@@ -21,7 +21,7 @@ class AlbumAutocompleteView(autocomplete.Select2QuerySetView):
         qs = Album.objects.all()
         if self.q:
             qs = qs.filter(name__istartswith=self.q)
-        qs = qs.order_by('name')
+        qs = qs.order_by('name', '-pk')
         return qs
 
 
@@ -38,5 +38,5 @@ class SongAutocompleteView(autocomplete.Select2QuerySetView):
             qs = qs.filter(punchlines__artist=artist)
             qs = qs.distinct()
 
-        qs = qs.order_by('title')
+        qs = qs.order_by('title', '-pk')
         return qs
