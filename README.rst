@@ -17,9 +17,9 @@ Install
 
     # For prod
     pip install -r requirements/prod.txt
-    export DJANGO_SETTINGS_MODULE="project.settings.prod"
+    export DJANGO_SETTINGS_MODULE="punchline.settings.prod"
 
-    cp src/project/settings/local.py.dist src/project/settings/local.py
+    cp punchline/settings/local.py.dist punchline/settings/local.py
     # edit it to fit your needs, like DB credentials
 
     python manage.py migrate
