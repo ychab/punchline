@@ -12,10 +12,10 @@ docs/_build/
 fabfile.py
 
 local.py
-static
-!static/.gitempty
-media
-!media/.gitempty
+./static/*
+!./static/.gitempty
+./media/*
+!./media/.gitempty
 
 .idea
 .vscode
