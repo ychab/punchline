@@ -13,7 +13,9 @@ fabfile.py
 
 local.py
 static
+!static/.gitempty
 media
+!media/.gitempty
 
 .idea
 .vscode
