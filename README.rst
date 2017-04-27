@@ -1,23 +1,27 @@
+Punchline
+=========
+
+Collect and play with the best punchlines from various worlds like music,
+politics, or literature.
+
 Install
 -------
 
 ::
 
-    cd <project>
+    git clone
+    cd punchline
 
     # For dev
     pip install -r requirements/dev.txt
-    pip install -e .
 
     # For prod
     pip install -r requirements/prod.txt
-    pip install .
     export DJANGO_SETTINGS_MODULE="project.settings.prod"
 
     cp src/project/settings/local.py.dist src/project/settings/local.py
-    # edit it ti fit your needs
+    # edit it to fit your needs, like DB credentials
 
-    cd src
     python manage.py migrate
     python manage.py collectstatic
 

@@ -8,7 +8,7 @@ PASSWORD_HASHERS = (
 )
 
 INSTALLED_APPS += (
-    'core.tests.dummy',
+    'punchline.core.tests.dummy',
 )
 
 

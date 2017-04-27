@@ -1,9 +1,9 @@
 from django.test import TestCase
 
+from ..models import Punchline
 from .factories import (
     AlbumFactory, ArtistFactory, PunchlineFactory, SongFactory,
 )
-from ..models import Punchline
 
 
 class RelationshipTestCase(TestCase):

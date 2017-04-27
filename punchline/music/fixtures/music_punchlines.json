@@ -246,7 +246,7 @@
     "model": "music.punchline",
     "pk": 9,
     "fields": {
-        "text": "J'ai tout le temps envie de baiser\r\nFaut que j'aille voir une psychot\u00e9rapute",
+        "text": "J'ai tout le temps envie de baiser\r\nFaut que j'aille voir une psychoth\u00e9rapute",
         "language": "fr_FR",
         "created": "2017-04-25T14:36:37.131Z",
         "modified": "2017-04-25T14:36:37.132Z",

@@ -1,6 +1,8 @@
 from datetime import timedelta
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Permission
+from django.contrib.contenttypes.models import ContentType
 from django.utils import timezone
 from django.utils.translation import get_language, to_locale
 
@@ -18,6 +20,28 @@ class UserFactory(factory.DjangoModelFactory):
     username = factory.Sequence(lambda n: 'user_%d' % n)
     password = factory.PostGenerationMethodCall('set_password', 'test')
     email = factory.LazyAttribute(lambda o: '%s@example.com' % o.username)
+
+    @factory.post_generation
+    def user_permissions(self, create, extracted, **kwargs):
+        if create and extracted:
+            if extracted == 'all':
+                self.user_permissions.set(UserFactory.get_permissions())
+            else:
+                self.user_permissions.set(
+                    Permission.objects.filter(codename__in=extracted))
+
+    @classmethod
+    def get_permissions(cls):
+        if not hasattr(cls, '_permissions'):
+            cls._permissions = Permission.objects.filter(
+                content_type__in=ContentType.objects.filter(
+                    app_label__in=(
+                        'core',
+                        'music',
+                    ),
+                ),
+            )
+        return cls._permissions
 
 
 class AuthorFactory(factory.DjangoModelFactory):

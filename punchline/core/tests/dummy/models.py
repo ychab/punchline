@@ -1,4 +1,4 @@
-from core.models import Punchline
+from ...models import Punchline
 
 
 class DummyPunchline(Punchline):

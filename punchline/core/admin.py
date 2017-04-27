@@ -3,11 +3,11 @@ from django.contrib.admin import AdminSite
 from django.contrib.auth.admin import GroupAdmin, UserAdmin
 from django.contrib.auth.models import Group, User
 
-from music.admin import (
+from punchline.music.admin import (
     AlbumAdmin, ArtistAdmin, PunchlineAdmin, SongAdmin,
 )
-from music.models import Album, Artist, Punchline, Song
-from music.views import (
+from punchline.music.models import Album, Artist, Punchline, Song
+from punchline.music.views import (
     AlbumAutocompleteView, ArtistAutocompleteView, SongAutocompleteView,
 )
 

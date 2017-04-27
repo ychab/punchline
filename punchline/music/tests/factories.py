@@ -6,7 +6,7 @@ from django.utils.translation import get_language, to_locale
 import factory
 from factory import fuzzy
 
-from core.tests.factories import (
+from punchline.core.tests.factories import (
     AuthorFactory, PunchlineFactory as BasePunchlineFactory,
 )
 
@@ -54,5 +54,5 @@ class PunchlineFactory(BasePunchlineFactory):
 
     class Params:
         has_song = factory.Trait(
-            song=factory.SubFactory(ArtistFactory)
+            song=factory.SubFactory(SongFactory)
         )
