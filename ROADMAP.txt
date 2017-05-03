@@ -1,0 +1,3 @@
+- autocomplete : create song from search + create artist from search
+- popup song : inject artist context to filter album of the current selected author
+
