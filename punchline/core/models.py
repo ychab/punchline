@@ -5,6 +5,7 @@ from django.utils.translation import get_language, to_locale
 
 
 class Author(models.Model):
+    slug = models.SlugField(max_length=255, null=True, blank=True)
     first_name = models.CharField(max_length=512, null=True, blank=True)
     last_name = models.CharField(max_length=512, null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)

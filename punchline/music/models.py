@@ -5,14 +5,15 @@ from punchline.core.models import Author, Punchline as BasePunchline
 
 
 class Artist(Author):
-    nickname = models.CharField(max_length=1024)
+    nickname = models.CharField(max_length=255)
 
     def __str__(self):
         return self.nickname
 
 
 class Album(models.Model):
-    name = models.CharField(max_length=1024)
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     image = models.ImageField(upload_to='albums', null=True, blank=True)
 
@@ -22,6 +23,7 @@ class Album(models.Model):
 
 class Song(models.Model):
     title = models.CharField(max_length=1024)
+    slug = models.SlugField(max_length=255, null=True, blank=True)
     album = models.ForeignKey(
         Album,
         on_delete=models.SET_NULL,

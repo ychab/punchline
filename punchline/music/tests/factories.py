@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from django.utils import timezone
+from django.utils.text import slugify
 from django.utils.translation import get_language, to_locale
 
 import factory
@@ -21,6 +22,7 @@ class ArtistFactory(AuthorFactory):
         model = Artist
 
     nickname = factory.Faker('name', locale=locale)
+    slug = factory.LazyAttribute(lambda o: slugify(o.nickname))
 
 
 class AlbumFactory(factory.DjangoModelFactory):
@@ -28,6 +30,7 @@ class AlbumFactory(factory.DjangoModelFactory):
         model = Album
 
     name = factory.Faker('sentence', locale=locale)
+    slug = factory.LazyAttribute(lambda o: slugify(o.name))
     date = fuzzy.FuzzyDateTime(start_dt=timezone.now() - timedelta(days=365*10))
 
 
@@ -36,6 +39,7 @@ class SongFactory(factory.DjangoModelFactory):
         model = Song
 
     title = factory.Faker('sentence', locale=locale)
+    slug = factory.LazyAttribute(lambda o: slugify(o.title))
     date = fuzzy.FuzzyDateTime(start_dt=timezone.now() - timedelta(days=365*10))
     has_album = True
 

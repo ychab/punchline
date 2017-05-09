@@ -13,10 +13,13 @@ class ArtistAdmin(admin.ModelAdmin):
     list_per_page = 50
 
     fields = (
-        'nickname',
+        ('nickname', 'slug'),
         ('first_name', 'last_name', 'birth_date',),
         ('description', 'image'),
     )
+    prepopulated_fields = {
+        'slug': ('nickname',),
+    }
 
 
 @admin.register(Album)
@@ -26,7 +29,10 @@ class AlbumAdmin(admin.ModelAdmin):
     ordering = ('-date',)
     list_per_page = 50
 
-    fields = ('name', 'date')
+    fields = ('name', 'slug', 'date')
+    prepopulated_fields = {
+        'slug': ('name',),
+    }
 
 
 @admin.register(Song)
@@ -38,7 +44,10 @@ class SongAdmin(admin.ModelAdmin):
     list_per_page = 50
 
     form = SongAdminForm
-    fields = ('title', 'album', 'date')
+    fields = ('title', 'slug', 'album', 'date')
+    prepopulated_fields = {
+        'slug': ('title',),
+    }
 
     def album_link(self, obj):
         if obj.album:
@@ -58,7 +67,9 @@ class PunchlineAdmin(admin.ModelAdmin):
         'modified',
     )
     list_select_related = ('artist', 'song__album')
-    search_fields = ('text', 'artist__nickname', 'song__title')
+    search_fields = (
+        'text', 'artist__nickname', 'song__title', 'song__album__name',
+    )
     ordering = ('-modified',)
     list_per_page = 50
 
