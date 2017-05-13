@@ -1,10 +1,35 @@
 from dal import autocomplete
+from rest_framework.decorators import list_route
+from rest_framework.mixins import ListModelMixin
+from rest_framework.response import Response
+from rest_framework.viewsets import GenericViewSet
+from rest_framework.permissions import AllowAny
 
-from .models import Album, Artist, Song
+from .models import Album, Artist, Punchline, Song
+from .serializers import PunchlineSerializer
 
-# punch it ! => returns a random punchline
-# returns a punchliche with postgres seach text
-# list all punchline, filtered by author
+
+class PunchlineViewSet(ListModelMixin, GenericViewSet):
+    """
+    list:
+    Returns a paginated list of punchlines.
+
+    punch-it:
+    Returns a random punchline.
+    """
+    model = Punchline
+    queryset = Punchline.objects.order_by('-created')
+    serializer_class = PunchlineSerializer
+    permission_classes = (AllowAny,)
+    filter_fields = ('artist',)
+    search_fields = ('text',)
+
+    @list_route(['get'])
+    def punch_it(self, request, *args, **kwargs):
+        # Random query could be dangerous for performance...?
+        punchline = Punchline.objects.order_by('?')[:1].first()
+        serializer = self.get_serializer(punchline)
+        return Response(serializer.data)
 
 
 class ArtistAutocompleteView(autocomplete.Select2QuerySetView):
